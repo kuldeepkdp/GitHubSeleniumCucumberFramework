@@ -8,6 +8,7 @@ import com.kdp.SeleniumCucumberFramework.BaseFunction.Selenium;
 import com.kdp.SeleniumCucumberFramework.Pages.ContactPage;
 import com.kdp.SeleniumCucumberFramework.Pages.RegistrationPage;
 
+
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -27,14 +28,14 @@ public class Registration {
 	@Given("^I click on registration link$")
 	public void i_click_on_registration_link() throws Throwable {
 		
-		System.out.println("i clicked on registration link");
+		driver.findElement(RegistrationPage.registerlink).click();
 	  
 	}
 
 	@And("^I click on Submit button$")
 	public void i_click_on_Submit_button() throws Throwable {
 		
-		System.out.println("i clicked on submit button");
+		driver.findElement(RegistrationPage.submit).click();
 
 	}
 

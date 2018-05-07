@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import com.kdp.SeleniumCucumberFramework.BaseFunction.CommonFunction;
 import com.kdp.SeleniumCucumberFramework.BaseFunction.Selenium;
 import com.kdp.SeleniumCucumberFramework.Pages.ContactPage;
+import com.kdp.SeleniumCucumberFramework.Pages.RegistrationPage;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -52,6 +53,12 @@ public class Contact {
 		driver.findElement(ContactPage.subject).sendKeys("Test Subject");
 		driver.findElement(ContactPage.message).sendKeys("Test message");
 
+	}
+	
+	@Then("^I got validation error message for mandatory fields$")
+	public void i_got_validation_error_message_for_mandatory_fields() throws Throwable {
+		String actualvalidation= driver.findElement(RegistrationPage.requiredField).getText();
+		Assert.assertEquals("Checking mandatory field validation", "* This field is required", actualvalidation);
 	}
 	
 
