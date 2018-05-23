@@ -8,8 +8,8 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         format={"pretty", "html:target/cucumber"},
-        //tags={"@ActiveFeature","@Active", },
-        tags={"@Dev" },
+        tags={"@ActiveFeature","@Active", },
+        //tags={"@Dev" },
         features="src/test/resource/FeatureFiles"
         )
 
